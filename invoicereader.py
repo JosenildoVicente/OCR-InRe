@@ -1,100 +1,116 @@
-import re
-import cv2
-import numpy as np
-import pytesseract
-from PIL import Image
+from getImages import getImages
+from getTexts import getTexts
 
-def get_string(img_path,name):
-    # Read image with opencv
-    img = cv2.imread(img_path)
+#Convert PDF to Image
+pages = getImages('invoices/Normal/MXO0492981.pdf', 'MXO0492981')
+#Get texts from images
+result = getTexts(pages)
+print(len(result))
+print(pages)
 
-    # Convert to gray
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Apply dilation and erosion to remove some noise
-    kernel = np.ones((1,  1), np.uint8)
-    img = cv2.dilate(img, kernel, iterations=1)
-    img = cv2.erode(img, kernel, iterations=1)
 
-    # Write image after removed noise
-    cv2.imwrite("removed_noise.png", img)
+# def get_string(img_path,name):
+#     # Read image with opencv
+#     img = cv2.imread(img_path)
+
+#     # Convert to gray
+#     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+#     # Apply dilation and erosion to remove some noise
+#     kernel = np.ones((1,  1), np.uint8)
+#     img = cv2.dilate(img, kernel, iterations=1)
+#     img = cv2.erode(img, kernel, iterations=1)
+
+#     # Write image after removed noise
+#     cv2.imwrite("removed_noise.png", img)
  
-    #  Apply threshold to get image with only black and white
-    img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 2)
+#     #  Apply threshold to get image with only black and white
+#     img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 2)
 
-    # Write the image after apply opencv to do some ...
-    cv2.imwrite("thres.png", img)
+#     # Write the image after apply opencv to do some ...
+#     cv2.imwrite("thres.png", img)
 
-    # Recognize text with tesseract for python
-    result = pytesseract.image_to_string(Image.open("thres.png"))
+#     # Recognize text with tesseract for python
+#     result = pytesseract.image_to_data(Image.open("thres.png"))
 
+#     result = result.replace("	",",")
 
-    pattern = re.compile(r"\n+( )*")
-    result = pattern.sub("\n",result)
-    pattern = re.compile(r"\n+")
-    result = pattern.sub("\n",result)
+#     # data = io.StringIO(result)
+#     # df = pd.read_csv(data, sep=",")
 
-    new_path = name+'.txt'
-    new_days = open(new_path,'w')
-    new_days.write(result)
-    new_days.close()
+#     # pattern = re.compile(r"\n+( )*")
+#     # result = pattern.sub("\n",result)
+#     # pattern = re.compile(r"\n+")
+#     # result = pattern.sub("\n",result)
 
-    result = result.splitlines()
+#     new_path = name+'.txt'
+#     new_days = open(new_path,'w')
+#     new_days.write(result)
+#     new_days.close()
 
-    # Remove template file
-    #os.remove(temp)
+#     # result = result.split()
 
-    return result
+#     # Remove template file
+#     #os.remove(temp)
 
-print ('--- Start recognize text from image ---')
+#     return result
 
-texts = get_string( "MXO0505702-1.jpg","MXO0505702-1")
+# print ('--- Start recognize text from image ---')
+
+# texts = get_string( "MXO0505702-1.jpg","MXO0505702-1")
+# texts = get_string( "MXO0492981-1.jpg","MXO0492981-1")
+# print(texts)MXO0492981
+# informacao = {}
+
 # print(texts)
-informacao = {}
 
-isvesselInformation = False
-isVoyageInformation = False
-isExportInformation = False
+# isvesselInformation = 0
+# isVoyageInformation = 0
+# isExportInformation = 0
 
-for text in texts:
+# for num in range(len(texts)):
     # print(text)
-    if isvesselInformation==True:
-        info = text.split()
-        tam_info = len(info) - 1
-        print(info)
-        informacao['vessel'] = info[tam_info-2] # É mais de uma palavra. Está incompleta
-        informacao['port_loading'] = info[tam_info-1]
-        informacao['port_disclarge'] = info[tam_info]
-        isvesselInformation = False
+    # if isvesselInformation==True:
+    #     info = text.split()
+    #     tam_info = len(info) - 1
+    #     print(info)
+    #     informacao['vessel'] = info[tam_info-2] # É mais de uma palavra. Está incompleta
+    #     informacao['port_loading'] = info[tam_info-1]
+    #     informacao['port_disclarge'] = info[tam_info]
+    #     isvesselInformation = False
         
-    if isVoyageInformation==True:
-        info = text.split()
-        print(info)
-        informacao['voyage_number'] = info[len(info)-1]
-        isVoyageInformation = False
+    # if isVoyageInformation==True:
+    #     info = text.split()
+    #     print(info)
+    #     informacao['voyage_number'] = info[len(info)-1]
+    #     isVoyageInformation = False
     
-    if isExportInformation==True:
-        info = text.split()
-        print(info)
-        informacao['export_reference'] = info[len(info)-1]
-        isExportInformation = False
+    # if isExportInformation==True:
+    #     info = text.split()
+    #     print(info)
+    #     informacao['export_reference'] = info[len(info)-1]
+    #     isExportInformation = False
+    # print(texts[num])
 
-
-    if (not (text.find("VOYAGE NUMBER") == (-1) )):
-        isVoyageInformation = True
-
-    if (not (text.find("EXPORT REFERENCES") == (-1))):
-        # print(text)
-        isExportInformation = True
-
-    if (not (text.find("VESSEL") == (-1))):
-        # print(text)
-        isvesselInformation = True
-
-
+    # if (texts[num] == "VOYAGE"):
+    #     isVoyageInformation = num
+    #     print(isVoyageInformation)
 
     
 
-print(informacao)
+    # if (not (text.find("EXPORT") == (-1))):
+    #     # print(text)
+    #     isExportInformation = True
 
-print ("------ Done -------")
+    # if (not (text.find("VESSEL") == (-1))):
+    #     # print(text)
+    #     isvesselInformation = True
+
+
+
+    
+
+# print(informacao)
+
+# print ("------ Done -------")
