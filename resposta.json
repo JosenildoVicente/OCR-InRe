@@ -1,7 +1,68 @@
 {
-    "voyage_number": "4100 4900 180 270",
-    "export_reference":"",
-    "port_loading":"",
-    "port_disclarge":"",
-    "vessel":""
+    "voyage_number": {
+        "left_start": 4100,
+        "left_end": 4900,
+        "top_start": 170,
+        "top_end": 300
+    },
+    "waybill_number": {
+        "left_start": 4100,
+        "left_end": 4900,
+        "top_start": 430,
+        "top_end": 560
+    },
+    "shipper": {
+        "left_start": 30,
+        "left_end": 2300,
+        "top_start": 200,
+        "top_end": 660
+    },
+    "consignee": {
+        "left_start": 30,
+        "left_end": 2300,
+        "top_start": 800,
+        "top_end": 1260
+    },
+    "notify_party": {
+        "left_start": 30,
+        "left_end": 2300,
+        "top_start": 1400,
+        "top_end": 1900
+    },
+    "export_references": {
+        "left_start": 2360,
+        "left_end": 5000,
+        "top_start": 800,
+        "top_end": 900
+    },
+    "freight_to_be_paid_at": {
+        "left_start": 2360,
+        "left_end": 3600,
+        "top_start": 2030,
+        "top_end": 2130
+    },
+    "number_of_original_waybills": {
+        "left_start": 3620,
+        "left_end": 5000,
+        "top_start": 2030,
+        "top_end": 2130
+    },
+    "vessel": {
+        "left_start": 30,
+        "left_end": 1100,
+        "top_start": 2220,
+        "top_end": 2350
+    },
+    "port_of_loading": {
+        "left_start": 1120,
+        "left_end": 2350,
+        "top_start": 2220,
+        "top_end": 2350
+    },
+    "port_of_discharge": {
+        "left_start": 2360,
+        "left_end": 3600,
+        "top_start": 2220,
+        "top_end": 2350
+    }
 } 

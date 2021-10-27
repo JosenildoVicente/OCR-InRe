@@ -11,8 +11,9 @@ def getTexts(pages,name):
         clearImage(page)
         new_text = recognizeText(page)
         new_df = toDataFrame(new_text)
-        result.append(new_df)
-        saveOnAFile(new_df.to_string(),name)
+        df = calculateCentroids(new_df)
+        result.append(df)
+        saveOnAFile(df.to_string(),name)
     return result
 
 
@@ -55,4 +56,11 @@ def toDataFrame(text):
     df = pd.read_csv(text_pu,sep=';')
     df = df[df.text.notnull()]
     df = df[df.text.str.isspace()==False]
+    return df
+
+def calculateCentroids(df):
+    df['centroid_left'] = (df.left + (df.width/2))
+    df['centroid_top'] = (df.top + (df.height/2))
+    df['centroid_left'] = df['centroid_left'].astype(int)
+    df['centroid_top'] = df['centroid_top'].astype(int)
     return df
