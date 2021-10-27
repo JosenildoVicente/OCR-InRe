@@ -1,18 +1,18 @@
-
-
 import cv2
 import numpy as np
 import pytesseract
 from PIL import Image
+import pandas as pd
+from io import StringIO
 
-
-def getTexts(pages):
+def getTexts(pages,name):
     result = []
     for page in pages:
         clearImage(page)
         new_text = recognizeText(page)
-        result.append(new_text)
-        saveOnAFile(new_text,page)
+        new_df = toDataFrame(new_text)
+        result.append(new_df)
+        saveOnAFile(new_df.to_string(),name)
     return result
 
 
@@ -39,7 +39,7 @@ def recognizeText(image_path):
     # Recognize text with tesseract for python
     result = pytesseract.image_to_data(Image.open(image_path))
 
-    result = result.replace("	",",")
+    result = result.replace("	",";")
 
     return result
 
@@ -49,3 +49,10 @@ def saveOnAFile(text,name):
     new_days = open(new_path,'w')
     new_days.write(text)
     new_days.close()
+
+def toDataFrame(text):
+    text_pu = StringIO(text)
+    df = pd.read_csv(text_pu,sep=';')
+    df = df[df.text.notnull()]
+    df = df[df.text.str.isspace()==False]
+    return df

@@ -1,12 +1,15 @@
 from getImages import getImages
 from getTexts import getTexts
 
+pdf_name = 'A1AA11AA1AA'
+pdf_path = 'invoices/Normal/'+pdf_name+'.pdf'
+
 #Convert PDF to Image
-pages = getImages('invoices/Normal/MXO0492981.pdf', 'MXO0492981')
+pages = getImages(pdf_path, pdf_name)
 #Get texts from images
-result = getTexts(pages)
-print(len(result))
-print(pages)
+result = getTexts(pages,pdf_name)
+print(result)
+# print(pages)
 
 
 
@@ -75,7 +78,7 @@ print(pages)
     #     info = text.split()
     #     tam_info = len(info) - 1
     #     print(info)
-    #     informacao['vessel'] = info[tam_info-2] # É mais de uma palavra. Está incompleta
+    #     informacao['vessel'] = info[tam_info-2] # E mais de uma palavra. Esta incompleta
     #     informacao['port_loading'] = info[tam_info-1]
     #     informacao['port_disclarge'] = info[tam_info]
     #     isvesselInformation = False
