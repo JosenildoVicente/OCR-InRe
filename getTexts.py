@@ -12,6 +12,7 @@ def getTexts(pages,name):
         new_text = recognizeText(page)
         new_df = toDataFrame(new_text)
         df = calculateCentroids(new_df)
+        df = sortDataFrame(df)
         result.append(df)
         saveOnAFile(df.to_string(),name)
     return result
@@ -63,4 +64,8 @@ def calculateCentroids(df):
     df['centroid_top'] = (df.top + (df.height/2))
     df['centroid_left'] = df['centroid_left'].astype(int)
     df['centroid_top'] = df['centroid_top'].astype(int)
+    return df
+
+def sortDataFrame(df):
+    df = df.sort_values(by=['centroid_top','centroid_left'])
     return df
