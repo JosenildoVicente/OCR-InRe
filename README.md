@@ -16,3 +16,15 @@ Fale sobre a solução q está sendo proposta. Como ela tem o potencial de resol
 ## Gráfico explicativo
 ![Captura de Tela 2021-10-28 às 18 49 51](https://user-images.githubusercontent.com/7680448/139341233-42ae31ff-d7ca-48ae-8393-230fefd5fe9d.png)
 
+## Pré requisitos
+
+  - Sistema Operacional
+  - Linguagem Utilizada
+  - Ambiente virtual
+   - Bibliotecas
+
+### Processo de instalação e execução
+
+Aqui deve conter um passo a passo auto explicável que possa ser replicado pelos avaliadores para a execução do sistema. Sugerimos a utilização de virtual enviroment para evitar falhas.
+
+# Time 
