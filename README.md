@@ -1,11 +1,11 @@
 # OCR-InRe
-Um detector e extrator de textos de imagens de faturas
+Um detector, extrator e minerador de textos de imagens de faturas
 ##  Visão Geral
 
-Esta é uma documentação modelo para os projetos do Academy Hack.
-Aqui você deverá descrever uma visão geral do seu projeto.
+Uma aplicação OCR para extração de dados, seleção de atributos, estruturação de dados e descoberta de conhecimento usando técnicas de aprendizado de máquina para gerar insights úteis para tomadas de decisões empresarias
 
-Link da Apresentação do Projeto
+[Link da Apresentação do Projeto](http://caminho.para.o.ppt)
+
 ##  Problema
 Criação de modelos Optical Character Recognition (OCR) para diferentes layouts consomem muito tempo, problemas na identificação de expressões regulares complexas, baixa acurácia, alto tempo de processamento e deficiência   de manter uma precisão após pequenas alterações de layout. Leitura  de cópia de faturas de fornecedores e redes de suprimentos
 
