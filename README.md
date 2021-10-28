@@ -14,6 +14,5 @@ Proposta de solução
 Fale sobre a solução q está sendo proposta. Como ela tem o potencial de resolver o problema?
 # Informações Técnicas
 ## Gráfico explicativo
-![] (https://github.com/JosenildoVicente/OCR-InRe/issues/1#issue-1038982275)
-
+![Captura de Tela 2021-10-28 às 18 49 51](https://user-images.githubusercontent.com/7680448/139341233-42ae31ff-d7ca-48ae-8393-230fefd5fe9d.png)
 
