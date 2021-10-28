@@ -7,15 +7,17 @@ from io import StringIO
 
 def getTexts(pages,name):
     result = []
-    for page in pages:
-        clearImage(page)
-        new_text = recognizeText(page)
-        new_df = toDataFrame(new_text)
+    for num_page in range(len(pages)):
+        clearImage(pages[num_page])
+        new_text = recognizeText(pages[num_page])
+        new_df = toDataFrame(new_text,num_page)
         df = calculateCentroids(new_df)
         df = sortDataFrame(df)
         result.append(df)
-        saveOnAFile(df.to_string(),name)
-    return result
+        saveOnAFile(df.to_string(),name+'_'+str(num_page))
+    df_result = pd.concat([result[0],result[1]])
+    saveOnAFile(df_result.to_string(),name)
+    return df_result
 
 
         
@@ -52,11 +54,12 @@ def saveOnAFile(text,name):
     new_days.write(text)
     new_days.close()
 
-def toDataFrame(text):
+def toDataFrame(text,num_page):
     text_pu = StringIO(text)
     df = pd.read_csv(text_pu,sep=';')
     df = df[df.text.notnull()]
     df = df[df.text.str.isspace()==False]
+    df['page_num'] = num_page
     return df
 
 def calculateCentroids(df):

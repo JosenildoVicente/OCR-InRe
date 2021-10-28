@@ -12,7 +12,7 @@ pages = getImages(pdf_path, pdf_name)
 result = getTexts(pages,pdf_name)
 
 #Get JSON
-new_json = structureJSON(result[0])
+new_json = structureJSON(result)
 
 print(new_json)
 
