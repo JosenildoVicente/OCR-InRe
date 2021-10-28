@@ -7,11 +7,15 @@ Aqui você deverá descrever uma visão geral do seu projeto.
 
 Link da Apresentação do Projeto
 ##  Problema
+Criação de modelos Optical Character Recognition (OCR) para diferentes layouts consomem muito tempo, problemas na identificação de expressões regulares complexas, baixa acurácia, alto tempo de processamento e deficiência   de manter uma precisão após pequenas alterações de layout. Leitura  de cópia de faturas de fornecedores e redes de suprimentos
 
-Descreva aqui que problema está sendo resolvido, quais as dores, o público alvo
-Proposta de solução
+## Proposta de solução
 
-Fale sobre a solução q está sendo proposta. Como ela tem o potencial de resolver o problema?
+Para solução do problema as seguintes etapas são necessárias 
+1. Desenvolvimento de um aplicação para extração de dados de faturas  digitalizadas.
+2. Rotulação das features principais  afim de criar uma estruturação dos dados.
+3. Processo de preparação, mineração e pós-processamento de dados visando extrair padrões interessantes, relevantes e inéditos e eventualmente ocultos.
+
 # Informações Técnicas
 ## Gráfico explicativo
 ![Captura de Tela 2021-10-28 às 18 49 51](https://user-images.githubusercontent.com/7680448/139341233-42ae31ff-d7ca-48ae-8393-230fefd5fe9d.png)
