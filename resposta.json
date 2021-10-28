@@ -64,5 +64,17 @@
         "left_end": 3600,
         "top_start": 2220,
         "top_end": 2350
+    },
+    "place_issue": {
+        "left_start": 1010,
+        "left_end": 1800,
+        "top_start": 6570,
+        "top_end": 6670
+    },
+    "date_issue": {
+        "left_start": 1801,
+        "left_end": 2500,
+        "top_start": 6570,
+        "top_end": 6670
     }
 } 

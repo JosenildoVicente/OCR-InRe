@@ -1,18 +1,23 @@
+import os
 from getImages import getImages
 from getTexts import getTexts
 from toJSON import structureJSON
 
-pdf_name = 'MXO0492981'
-pdf_path = 'invoices/Normal/'+pdf_name+'.pdf'
+def OCRInRe(file_path):
+    file_name, file_format = getFileName(file_path)
 
-#Convert PDF to Image
-pages = getImages(pdf_path, pdf_name)
+    pages = getImages(file_path, file_name)
 
-#Get texts from images
-result = getTexts(pages,pdf_name)
+    result = getTexts(pages,file_name)
 
-#Get JSON
-new_json = structureJSON(result)
+    new_json = structureJSON(result)
 
-print(new_json)
+    return new_json
 
+def getFileName(path):
+    file = os.path.basename(path)
+    file = file.split('.')
+    return file[0],file[1]
+
+if __name__ == '__main__':
+    OCRInRe(input())

@@ -14,7 +14,7 @@ def getTexts(pages,name):
         df = calculateCentroids(new_df)
         df = sortDataFrame(df)
         result.append(df)
-        saveOnAFile(df.to_string(),name+'_'+str(num_page))
+        # saveOnAFile(df.to_string(),name+'_'+str(num_page))
     df_result = pd.concat([result[0],result[1]])
     saveOnAFile(df_result.to_string(),name)
     return df_result
