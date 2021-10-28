@@ -18,7 +18,7 @@ Para solução do problema as seguintes etapas são necessárias
 
 # Informações Técnicas
 ## Gráfico explicativo
-![Captura de Tela 2021-10-28 às 18 49 51](https://user-images.githubusercontent.com/7680448/139341233-42ae31ff-d7ca-48ae-8393-230fefd5fe9d.png)
+![Captura de Tela 2021-10-28 às 18 49 51](https://github.com/JosenildoVicente/OCR-InRe/issues/1#issue-1038982275)
 
 ## Pré requisitos
 
