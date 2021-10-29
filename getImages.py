@@ -1,5 +1,5 @@
 from pdf2image import convert_from_path
-
+import os
 #Convert PDF to Image
 def getImages(doc,name):
     pages = convert_from_path(doc, 600)
@@ -9,3 +9,7 @@ def getImages(doc,name):
         pages[num].save( name +'-'+ str(num+1) +'.jpg', 'JPEG')
     
     return pagesName
+
+def deletImages(pages):
+    for i in pages:
+        os.remove(i)

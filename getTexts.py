@@ -5,6 +5,7 @@ from PIL import Image
 import pandas as pd
 from io import StringIO
 
+
 def getTexts(pages,name):
     result = []
     for num_page in range(len(pages)):
@@ -14,41 +15,28 @@ def getTexts(pages,name):
         df = calculateCentroids(new_df)
         df = sortDataFrame(df)
         result.append(df)
-        # saveOnAFile(df.to_string(),name+'_'+str(num_page))
     df_result = pd.concat([result[0],result[1]])
-    saveOnAFile(df_result.to_string(),name)
     return df_result
-
-
         
 def clearImage(img_path):
-    # Read image with opencv
     img = cv2.imread(img_path)
 
-    # Convert to gray
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # Apply dilation and erosion to remove some noise
     kernel = np.ones((1,  1), np.uint8)
     img = cv2.dilate(img, kernel, iterations=1)
     img = cv2.erode(img, kernel, iterations=1)
 
-    #  Apply threshold to get image with only black and white
     img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 31, 2)
 
-    # Write the image after apply opencv to do some ...
     cv2.imwrite(img_path, img)
 
 def recognizeText(image_path):
-    # Recognize text with tesseract for python
     result = pytesseract.image_to_data(Image.open(image_path))
-
     result = result.replace("	",";")
-
     return result
 
 def saveOnAFile(text,name):
-    
     new_path = name+'.txt'
     new_days = open(new_path,'w')
     new_days.write(text)

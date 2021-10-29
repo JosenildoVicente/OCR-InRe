@@ -76,5 +76,42 @@
         "left_end": 2500,
         "top_start": 6570,
         "top_end": 6670
+    },
+    "mark_number":{
+        "left_start": 30,
+        "left_end": 780,
+        "top_start": 2550,
+        "top_end": 4570
+    },
+    "number_kind_packages":{
+        "left_start": 800,
+        "left_end": 1350,
+        "top_start": 2550,
+        "top_end": 4570
+    },
+    "description":{
+        "left_start": 1360,
+        "left_end": 3450,
+        "top_start": 2550,
+        "top_end": 4570
+    },
+    "gross_weight_cargo":{
+        "left_start": 3480,
+        "left_end": 4080,
+        "top_start": 2550,
+        "top_end": 4570
+    },
+    "tare":{
+        "left_start": 4100,
+        "left_end": 4400,
+        "top_start": 2550,
+        "top_end": 4570
+    },
+    "measurement":{
+        "left_start": 4420,
+        "left_end": 5000,
+        "top_start": 2550,
+        "top_end": 4570
     }
+    
 } 
