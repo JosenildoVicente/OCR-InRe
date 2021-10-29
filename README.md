@@ -12,9 +12,11 @@ Criação de modelos Optical Character Recognition (OCR) para diferentes layouts
 ## Proposta de solução
 
 Para solução do problema as seguintes etapas são necessárias 
-1. Desenvolvimento de um aplicação para extração de dados de faturas  digitalizadas.
-2. Geração das features principais  afim de criar uma estruturação dos dados.
-3. Processo de preparação, mineração e pós-processamento de dados visando extrair padrões interessantes, relevantes e inéditos e eventualmente ocultos.
+1. Desenvolvimento de um aplicação para detecção e extração de dados de faturas digitalizadas.
+2. Geração das features principais (.json) afim de criar uma estruturação dos dados.
+3. Processo de preparação, mineração e pós-processamento de dados visando extrair padrões interessantes, relevantes e inéditos e eventualmente ocultos (desenvolvimento futuro).
+4. Suporte a novos templates (desenvolvimento futuro)
+5. Implementação de outras técnicas de OCR em estado da arte (desenvolvimento futuro)
 
 # Informações Técnicas
 ## Gráfico explicativo
