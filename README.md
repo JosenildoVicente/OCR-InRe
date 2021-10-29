@@ -35,5 +35,5 @@ Aqui deve conter um passo a passo auto explicável que possa ser replicado pelos
 
 # Time 
 
-| [<img src="https://user-images.githubusercontent.com/7680448/139342517-45bdbefc-5032-432a-9ffb-c17e36937fe8.jpg" width="115"><br><sub>ajr@cin.ufpe.br</sub>](https://github.com/Ailton3112) | [<img src="https://avatars.githubusercontent.com/u/22326734?v=4" width="115"><br><sub>@JosenildoVicente</sub>](https://github.com/JosenildoVicente) |
+| [<img src="https://user-images.githubusercontent.com/7680448/139342517-45bdbefc-5032-432a-9ffb-c17e36937fe8.jpg" width="115"><br><sub>@Ailton3112</sub>](https://github.com/Ailton3112) | [<img src="https://avatars.githubusercontent.com/u/22326734?v=4" width="115"><br><sub>@JosenildoVicente</sub>](https://github.com/JosenildoVicente) |
 | :---: | :---: |
