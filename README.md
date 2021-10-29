@@ -20,7 +20,7 @@ Para solução do problema as seguintes etapas são necessárias
 
 # Informações Técnicas
 ## Gráfico explicativo
-![Captura de Tela 2021-10-28 às 19 56 49](https://user-images.githubusercontent.com/7680448/139347299-86706b38-4bd9-4703-bafb-98d6c38b5666.png))
+![Captura de Tela 2021-10-28 às 21 38 15](https://user-images.githubusercontent.com/7680448/139354598-5a928b18-4f08-4024-9e76-2a566677320f.png)
 
 ## Pré requisitos
 
