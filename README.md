@@ -25,13 +25,39 @@ Para solução do problema as seguintes etapas são necessárias
 ## Pré-requisitos
 
   - Sistema Operacional
+    - Ubuntu 20.04
   - Linguagem Utilizada
+    - Python 3.1
   - Ambiente virtual
+    - Virtualenv (organização de requisitos)
   - Bibliotecas
+    - Google Tesseract (pytesseract)
+    - pdf2image
+    - Opencv
+    - Pandas
+    - Numpy
+    - Json
+    - Pill
 
 ### Processo de instalação e execução
 
-Aqui deve conter um passo a passo auto explicável que possa ser replicado pelos avaliadores para a execução do sistema. Sugerimos a utilização de virtual enviroment para evitar falhas.
+  - Todas as bibliotecas utilizadas estão no arquivo requirements.txt
+      ```
+      pip install -r requirements.txt
+      ```
+  - Execução
+    - Para executar o programa digite o seguinte código
+      ```
+      python invoicereader.py
+      ```
+    - Coloque o caminho do arquivo PDF para começa a execução (arquivo pdf fornecido pela organização do hackaton /seu_path/nome_arquivo)
+    - exemplo: 
+      - /seu_path/MXO0492981.pdf 
+      - /seu_path/MXO0493210.pdf 
+      - /seu_path/MXO0497759.pdf 
+      - /seu_path/MXO0500211.pdf
+      - /seu_path/MXO0505702.pdf
+    - Será gerado um arquivo JSON no mesmo diretório do arquivo PDF fornecido
 
 # Time 
 
