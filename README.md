@@ -41,7 +41,7 @@ Para solução do problema as seguintes etapas são necessárias
 
 ### Processo de instalação e execução
 
-  - Todas as bibliotecas utilizadas estão no arquivo requirements.txt
+  - Todas as bibliotecas utilizadas estão no arquivo [requirements.txt](https://github.com/JosenildoVicente/OCR-InRe/blob/main/requirements.txt)
       ```
       pip install -r requirements.txt
       ```
